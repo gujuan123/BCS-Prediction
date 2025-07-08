@@ -9,7 +9,7 @@ Original file is located at
 
 from google.colab import files
 uploaded = files.upload()
-#WithHead_Available data with common BCS dimension(ECT L W D)
+#395 data (4input_ECT L W D)
 
 # first neural network with keras make predictions
 import pandas as pd
@@ -27,10 +27,10 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 #import pdb
-for i in range(70):
+for i in range(100):
     #def pdb_test():
     # load the dataset
-    dataset = pd.read_csv('WithHead_Available data with common BCS dimension(ECT L W D).csv')
+    dataset = pd.read_csv('395 data (4input_ECT L W D).csv')
     # split into input (X) and output (y) variables
     X = dataset.iloc[:, 0:4]
     y = dataset.iloc[:, 4]
@@ -48,7 +48,7 @@ for i in range(70):
     #print(X.min(), X.max(), y.min(), y.max())
     # define the keras model
     model = Sequential()
-    model.add(Dense(34, input_dim=4, activation='relu'))
+    model.add(Dense(24, input_dim=4, activation='relu'))
     #model.add(Dense(15, activation='relu'))
     model.add(Dense(1, activation='sigmoid'))
     # compile the keras model
